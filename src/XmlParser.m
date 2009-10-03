@@ -1,5 +1,4 @@
 #import "XmlParser.h"
-#import <libxml/tree.h>
 
 
 // Function prototypes for SAX callbacks. These are the essential functions.
@@ -130,7 +129,11 @@ static xmlSAXHandler simpleSAXHandlerStruct;
     [self setConnection:connection];
     [connection release];
     
-    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
+    // TODO: Remove UIApplication references
+    // Network activity indicators should probably be handled by the view
+    // controller. Keeping these out also allows for the code to be both Mac and
+    // iPhone OS compatible as only dependent on Foundation and libxml2.
+    // [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
     
     context_ = xmlCreatePushParserCtxt(&simpleSAXHandlerStruct, self, NULL, 0, NULL);
     
@@ -150,7 +153,7 @@ static xmlSAXHandler simpleSAXHandlerStruct;
         [self setConnection:nil];
     }
     
-    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
+    // [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
     
     // Release resources used only in this thread.
     xmlFreeParserCtxt(context_);

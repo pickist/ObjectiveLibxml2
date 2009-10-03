@@ -1,4 +1,3 @@
-#import <UIKit/UIKit.h>
 // Must include libxml2.2.dylib for <libxml/tree.h> to work. To do so:
 // -add the file to your Frameworks from here:
 // /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS3.0.sdk/usr/lib
