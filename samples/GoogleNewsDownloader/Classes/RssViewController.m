@@ -197,7 +197,12 @@
 
 - (void)viewWillDisappear:(BOOL)animated
 {
-	[super viewWillDisappear:animated];
+    // Cancels any operations in the queue. This is for when pressing the back
+    // button and dismissing the view controller. This prevents the parser from 
+    // still running and failing when calling its delegate.
+    [[self operationQueue] cancelAllOperations];
+    
+    [self setIsParsing:NO];
 }
 
 
