@@ -45,6 +45,9 @@ ObjectiveLibxml2 is compiled as a static library, and the easiest way to add it 
 8. You're ready to go.  Just #import <ObjectiveLibxml2/ObjectiveLibxml2.h> anywhere you want to use XML parser classes
    in your project.
 
+Be sure to make these changes to all the appropriate configurations, including Debug AND Distribution. I highly 
+recommend testing as an Ad Hoc distribution before distributing when dealing with static libraries. I've been burned once. 
+
 The installation instructions were derived from the excellent [Three20][] project.
   
 [Three20]: http://github.com/joehewitt/three20
