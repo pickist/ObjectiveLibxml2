@@ -15,7 +15,29 @@
 		28AD73600D9D9599002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD735F0D9D9599002E5188 /* MainWindow.xib */; };
 		28C286E10D94DF7D0034E888 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C286E00D94DF7D0034E888 /* RootViewController.m */; };
 		28F335F11007B36200424DE2 /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28F335F01007B36200424DE2 /* RootViewController.xib */; };
+		45E364FA1077F8D900F718EE /* RssViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45E364F81077F8D900F718EE /* RssViewController.m */; };
+		45E364FB1077F8D900F718EE /* RssView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45E364F91077F8D900F718EE /* RssView.xib */; };
+		45E3667B107819F300F718EE /* libObjectiveLibxml2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 45E36675107817D000F718EE /* libObjectiveLibxml2.a */; };
+		45E367D610782BE900F718EE /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 45E367D510782BE900F718EE /* libxml2.dylib */; };
+		45E3687E107832FF00F718EE /* Item.m in Sources */ = {isa = PBXBuildFile; fileRef = 45E3687D107832FF00F718EE /* Item.m */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		45E36674107817D000F718EE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 45E36670107817D000F718EE /* ObjectiveLibxml2.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D2AAC07E0554694100DB518D /* libObjectiveLibxml2.a */;
+			remoteInfo = ObjectiveLibxml2;
+		};
+		45E3669710781A6F00F718EE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 45E36670107817D000F718EE /* ObjectiveLibxml2.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = D2AAC07D0554694100DB518D /* ObjectiveLibxml2 */;
+			remoteInfo = ObjectiveLibxml2;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -31,6 +53,13 @@
 		28F335F01007B36200424DE2 /* RootViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RootViewController.xib; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		45E364B41077B1BE00F718EE /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		45E364F71077F8D900F718EE /* RssViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RssViewController.h; sourceTree = "<group>"; };
+		45E364F81077F8D900F718EE /* RssViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RssViewController.m; sourceTree = "<group>"; };
+		45E364F91077F8D900F718EE /* RssView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = RssView.xib; path = Classes/RssView.xib; sourceTree = "<group>"; };
+		45E36670107817D000F718EE /* ObjectiveLibxml2.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ObjectiveLibxml2.xcodeproj; path = ../../src/ObjectiveLibxml2.xcodeproj; sourceTree = SOURCE_ROOT; };
+		45E367D510782BE900F718EE /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = /usr/lib/libxml2.dylib; sourceTree = "<absolute>"; };
+		45E3687C107832FF00F718EE /* Item.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Item.h; sourceTree = "<group>"; };
+		45E3687D107832FF00F718EE /* Item.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Item.m; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* GoogleNewsDownloader-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleNewsDownloader-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -42,6 +71,8 @@
 				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
 				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
 				2892E4100DC94CBA00A64D0F /* CoreGraphics.framework in Frameworks */,
+				45E3667B107819F300F718EE /* libObjectiveLibxml2.a in Frameworks */,
+				45E367D610782BE900F718EE /* libxml2.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -51,10 +82,14 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				28C286DF0D94DF7D0034E888 /* RootViewController.h */,
-				28C286E00D94DF7D0034E888 /* RootViewController.m */,
 				1D3623240D0F684500981E51 /* GoogleNewsDownloaderAppDelegate.h */,
 				1D3623250D0F684500981E51 /* GoogleNewsDownloaderAppDelegate.m */,
+				45E3687C107832FF00F718EE /* Item.h */,
+				45E3687D107832FF00F718EE /* Item.m */,
+				28C286DF0D94DF7D0034E888 /* RootViewController.h */,
+				28C286E00D94DF7D0034E888 /* RootViewController.m */,
+				45E364F71077F8D900F718EE /* RssViewController.h */,
+				45E364F81077F8D900F718EE /* RssViewController.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -92,9 +127,11 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				28F335F01007B36200424DE2 /* RootViewController.xib */,
-				28AD735F0D9D9599002E5188 /* MainWindow.xib */,
 				8D1107310486CEB800E47090 /* GoogleNewsDownloader-Info.plist */,
+				28AD735F0D9D9599002E5188 /* MainWindow.xib */,
+				45E36670107817D000F718EE /* ObjectiveLibxml2.xcodeproj */,
+				28F335F01007B36200424DE2 /* RootViewController.xib */,
+				45E364F91077F8D900F718EE /* RssView.xib */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -105,6 +142,7 @@
 				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
 				1D30AB110D05D00D00671497 /* Foundation.framework */,
 				2892E40F0DC94CBA00A64D0F /* CoreGraphics.framework */,
+				45E367D510782BE900F718EE /* libxml2.dylib */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -115,6 +153,14 @@
 				45E364B41077B1BE00F718EE /* Constants.h */,
 			);
 			name = Constants;
+			sourceTree = "<group>";
+		};
+		45E36671107817D000F718EE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				45E36675107817D000F718EE /* libObjectiveLibxml2.a */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -131,6 +177,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				45E3669810781A6F00F718EE /* PBXTargetDependency */,
 			);
 			name = GoogleNewsDownloader;
 			productName = GoogleNewsDownloader;
@@ -154,12 +201,28 @@
 			);
 			mainGroup = 29B97314FDCFA39411CA2CEA /* CustomTemplate */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 45E36671107817D000F718EE /* Products */;
+					ProjectRef = 45E36670107817D000F718EE /* ObjectiveLibxml2.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				1D6058900D05DD3D006BFB54 /* GoogleNewsDownloader */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		45E36675107817D000F718EE /* libObjectiveLibxml2.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libObjectiveLibxml2.a;
+			remoteRef = 45E36674107817D000F718EE /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		1D60588D0D05DD3D006BFB54 /* Resources */ = {
@@ -168,6 +231,7 @@
 			files = (
 				28AD73600D9D9599002E5188 /* MainWindow.xib in Resources */,
 				28F335F11007B36200424DE2 /* RootViewController.xib in Resources */,
+				45E364FB1077F8D900F718EE /* RssView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -181,10 +245,20 @@
 				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
 				1D3623260D0F684500981E51 /* GoogleNewsDownloaderAppDelegate.m in Sources */,
 				28C286E10D94DF7D0034E888 /* RootViewController.m in Sources */,
+				45E364FA1077F8D900F718EE /* RssViewController.m in Sources */,
+				45E3687E107832FF00F718EE /* Item.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		45E3669810781A6F00F718EE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = ObjectiveLibxml2;
+			targetProxy = 45E3669710781A6F00F718EE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		1D6058940D05DD3E006BFB54 /* Debug */ = {
@@ -221,7 +295,12 @@
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"/usr/include/libxml2/**",
+					../../src,
+				);
 				IPHONEOS_DEPLOYMENT_TARGET = 3.0;
+				OTHER_LDFLAGS = "";
 				PREBINDING = NO;
 				SDKROOT = iphoneos3.1;
 			};
@@ -235,7 +314,12 @@
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"/usr/include/libxml2/**",
+					../../src,
+				);
 				IPHONEOS_DEPLOYMENT_TARGET = 3.0;
+				OTHER_LDFLAGS = "";
 				PREBINDING = NO;
 				SDKROOT = iphoneos3.1;
 			};

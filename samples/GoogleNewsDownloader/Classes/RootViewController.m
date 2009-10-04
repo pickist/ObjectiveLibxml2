@@ -1,6 +1,8 @@
 #import "RootViewController.h"
 
+#import "RssViewController.h"
 #import "Constants.h"
+
 
 @implementation RootViewController
 
@@ -66,40 +68,7 @@
     [cell setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
     
     NSString *category = [[self categories] objectAtIndex:[indexPath row]];
-    NSString *displayName;
-    
-    // Maps the category abbreviation to the display name
-    // For example b -> Business
-    if ([kCategoryWorld isEqual:category])
-    {
-        displayName = kCategoryWorldName;
-    }
-    else if ([kCategoryNational isEqual:category])
-    {
-        displayName = kCategoryNationalName;
-    }
-    else if ([kCategoryBusiness isEqual:category])
-    {
-        displayName = kCategoryBusinessName;
-    }
-    else if ([kCategoryTech isEqual:category])
-    {
-        displayName = kCategoryTechName;
-    }
-    else if ([kCategoryEntertainment isEqual:category])
-    {
-        displayName = kCategoryEntertainmentName;
-    }
-    else if ([kCategorySports isEqual:category])
-    {
-        displayName = kCategorySportsName;
-    }
-    else if ([kCategoryHealth isEqual:category])
-    {
-        displayName = kCategoryHealthName;
-    }
-    
-    [[cell textLabel] setText:displayName];
+    [[cell textLabel] setText:category];
 
     return cell;
 }
@@ -110,9 +79,12 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-
+    NSString *category = [[self categories] objectAtIndex:[indexPath row]];
+    
+    RssViewController *viewController = [[RssViewController alloc] initWithNibName:@"RssView" bundle:nil];
+    [viewController downloadAndParseCategory:category];
+    [[self navigationController] pushViewController:viewController animated:YES];
+    [viewController release];
 }
 
-
 @end
-

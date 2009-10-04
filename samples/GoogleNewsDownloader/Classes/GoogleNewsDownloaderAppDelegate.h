@@ -1,8 +1,9 @@
 
 @interface GoogleNewsDownloaderAppDelegate : NSObject <UIApplicationDelegate>
-{    
-    UIWindow *window_;
-    UINavigationController *navigationController_;
+{
+    @private
+        UIWindow *window_;
+        UINavigationController *navigationController_;
 }
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;

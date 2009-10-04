@@ -4,19 +4,23 @@
 #define kGoogleNewsNation = @"us"
 
 // News Category mappings
-// The initial is used by Google to determine which category
-// The *Name is for the display name
-#define kCategoryWorld @"w"
-#define kCategoryWorldName @"World"
-#define kCategoryNational @"n"
-#define kCategoryNationalName @"National"
-#define kCategoryBusiness @"b"
-#define kCategoryBusinessName @"Business"
-#define kCategoryTech @"t"
-#define kCategoryTechName @"Tech"
-#define kCategoryEntertainment @"e"
-#define kCategoryEntertainmentName @"Entertainment"
-#define kCategorySports @"s"
-#define kCategorySportsName @"Sports"
-#define kCategoryHealth @"m"
-#define kCategoryHealthName @"Health"
+// One is the display name of the param
+// The other is the URL parameter used to download the RSS feed
+#define kCategoryWorld @"World"
+#define kCategoryWorldParam @"w"
+#define kCategoryNational @"National"
+#define kCategoryNationalParam @"n"
+#define kCategoryBusiness @"Business"
+#define kCategoryBusinessParam @"b"
+#define kCategoryTech @"Tech"
+#define kCategoryTechParam @"t"
+#define kCategoryEntertainment @"Entertainment"
+#define kCategoryEntertainmentParam @"e"
+#define kCategorySports @"Sports"
+#define kCategorySportsParam @"s"
+#define kCategoryHealth @"Health"
+#define kCategoryHealthParam @"m"
+
+// Element name representing a new item
+// For <item>, would use item
+#define kItemDelimiter "item"
