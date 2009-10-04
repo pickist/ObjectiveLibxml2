@@ -1,0 +1,50 @@
+ObjectiveLibxml2
+================
+
+ObjectiveLibxml2 is a light-weight, asynchronous, streaming, event-based XML parser using Objective-C and the C library libxml2. Since only a single downloaded chunk of the XML document is in memory at a time, the ObjectiveLibxml2 static library is meant for any iPhone application that needs to download and parse XML.
+
+A sample project is included that downloads and parses Google News RSS feeds. Each parsed item is added in real-time to the table view.
+
+Please let me know if you find any issue with the parser! Or better yet, fork it and push the changes yourself.
+
+This project used Apple's sample project TopSongs as a starting point. ObjectiveLibxml2, however, decouples the parsing from the model, letting your delegate determine how to interpret the data.
+
+Adding ObjectiveLibxml2 to your project
+=======================================
+
+ObjectiveLibxml2 is compiled as a static library, and the easiest way to add it to your project is to use Xcode's "dependent project" facilities.  Here is how:
+
+1. Clone the ObjectiveLibxml2 git repository: `git clone git://github.com/baalexander/ObjectiveLibxml2.git`.  Make sure 
+   you store the repository in a permanent place because Xcode will need to reference the files
+   every time you compile your project. Another option is to add the library as a submodule to your current git project. 
+
+2. Locate the "ObjectiveLibxml2.xcodeproj" file under "ObjectiveLibxml2/src".  Drag ObjectiveLibxml2.xcodeproj and drop it onto
+   the root of your Xcode project's "Groups and Files"  sidebar. Alternatively, press Cmd + Opt + A. A dialog will 
+   appear -- make sure "Copy items" is unchecked and "Reference Type" is "Relative to Project" before clicking "Add".
+
+3. Now you need to link the ObjectiveLibxml2 static library to your project.  Click the "ObjectiveLibxml2.xcodeproj" 
+   item that has just been added to the sidebar.  Under the "Details" table, you will see a single
+   item: libObjectiveLibxml2.a.  Check the checkbox on the far right of libObjectiveLibxml2.a.
+
+4. Now you need to add ObjectiveLibxml2 as a dependency of your project, so Xcode compiles it whenever
+   you compile your project.  Expand the "Targets" section of the sidebar and double-click your
+   application's target.  Under the "General" tab you will see a "Direct Dependencies" section. 
+   Click the "+" button, select "ObjectiveLibxml2", and click "Add Target".
+
+5. Now you need to add the libxml2 library to your project.  Right click on the
+   "Frameworks" group in your project (or equivalent) and select Add > Existing Frameworks. 
+   Then locate libxml2.dylib and add it to the project.
+
+6. We need to tell your project where to find the ObjectiveLibxml2 headers.  Open your
+   "Project Settings" and go to the "Build" tab. Look for "Header Search Paths" and double-click
+   it.  Add the relative path from your project's directory to the "ObjectiveLibxml2/src" directory.
+
+7. We also need to add to "Header Search Paths" the paths for the libxml2 library. Add the path
+   "/usr/include/libxml2/**".
+
+8. You're ready to go.  Just #import <ObjectiveLibxml2/ObjectiveLibxml2.h> anywhere you want to use XML parser classes
+   in your project.
+
+The installation instructions were derived from the excellent [Three20][] project.
+  
+[Three20]: http://github.com/joehewitt/three20
