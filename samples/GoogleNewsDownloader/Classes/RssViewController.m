@@ -49,12 +49,19 @@
     [super dealloc];
 }
 
+- (void)setIsParsing:(BOOL)isParsing
+{
+    isParsing_ = isParsing;
+    
+    // Update the internet activity loader in the status bar
+    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:isParsing];
+}
+
 - (void)downloadAndParseCategory:(NSString *)category
 {
     [self setCategory:category];
     
     [self setIsParsing:YES];
-    // TODO: Activate network indicator
     
     NSOperationQueue *operationQueue = [[NSOperationQueue alloc] init];
     [self setOperationQueue:operationQueue];
@@ -168,7 +175,13 @@
 {
     [self setIsParsing:NO];
     
-    // TODO: Display alert
+    UIAlertView *errorAlert = [[UIAlertView alloc] initWithTitle:@"Error parsing" 
+                                                         message:[error localizedDescription] 
+                                                        delegate:nil
+                                               cancelButtonTitle:@"Ok"
+                                               otherButtonTitles:nil];
+    [errorAlert show];
+    [errorAlert release];
 }
 
 
