@@ -1,10 +1,8 @@
-// Must include libxml2.2.dylib for <libxml/tree.h> to work. To do so:
-// -add the file to your Frameworks from here:
-// /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS3.0.sdk/usr/lib
-// -set the path Header Search Paths under Build:
-// /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS3.0.sdk/usr/include/libxml2
-// TODO: Figure out how to not require the Header Search Paths step. 
-// TopSongs source does not.
+#import <Foundation/Foundation.h>
+// Must include libxml2.2.dylib for <libxml/tree.h> to work.
+// Steps:
+//   1) Add libxml2.dylib to your Frameworks
+//   2) Add /usr/include/libxml2/** to your Header Search Paths
 #import <libxml/tree.h>
 
 #import "XmlElement.h"

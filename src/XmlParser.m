@@ -1,4 +1,4 @@
-#import "XmlParser.h"
+#import "ObjectiveLibxml2/XmlParser.h"
 
 
 // Function prototypes for SAX callbacks. These are the essential functions.

@@ -1,4 +1,4 @@
-#import "XmlElement.h"
+#import "ObjectiveLibxml2/XmlElement.h"
 
 
 @implementation XmlElement
