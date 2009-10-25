@@ -11,7 +11,7 @@
 @class XmlParser;
 
 // Protocol for the parser to communicate with its delegate.
-@protocol ParserDelegate <NSObject>
+@protocol XmlParserDelegate <NSObject>
 // Called by the parser when parsing is finished.
 - (void)parserDidEndParsingData:(XmlParser *)parser;
 // Called by the parser in the case of an error.
@@ -39,7 +39,7 @@
 {
     @private
         // Delegate to call back parsed information
-        id <ParserDelegate> delegate_;
+        id <XmlParserDelegate> delegate_;
         // Reference to the libxml parser context
         xmlParserCtxtPtr context_;
         // Handles asynchronous retrieval of the XML
@@ -62,7 +62,7 @@
 /**
  * Receives callbacks while parsing the document
  */
-@property (nonatomic, assign) id <ParserDelegate> delegate;
+@property (nonatomic, assign) id <XmlParserDelegate> delegate;
 
 /**
  * Item name determines when an item began and when an item ended.

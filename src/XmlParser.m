@@ -129,12 +129,6 @@ static xmlSAXHandler simpleSAXHandlerStruct;
     [self setConnection:connection];
     [connection release];
     
-    // TODO: Remove UIApplication references
-    // Network activity indicators should probably be handled by the view
-    // controller. Keeping these out also allows for the code to be both Mac and
-    // iPhone OS compatible as only dependent on Foundation and libxml2.
-    // [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
-    
     context_ = xmlCreatePushParserCtxt(&simpleSAXHandlerStruct, self, NULL, 0, NULL);
     
     // Wait until downloading and parsing has finished
@@ -152,8 +146,6 @@ static xmlSAXHandler simpleSAXHandlerStruct;
         [[self connection] cancel];
         [self setConnection:nil];
     }
-    
-    // [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
     
     // Release resources used only in this thread.
     xmlFreeParserCtxt(context_);
@@ -231,7 +223,7 @@ static void startElementSAX(void *ctx, const xmlChar *localname, const xmlChar *
                             int nb_namespaces, const xmlChar **namespaces, int nb_attributes, int nb_defaulted, const xmlChar **attributes)
 {
     XmlParser *parser = (XmlParser *)ctx;
-    
+
     // The second parameter to strncmp is the name of the element, which we known from the XML schema of the feed.
     // The third parameter to strncmp is the number of characters in the element name, plus 1 for the null terminator.
     if (prefix == NULL
@@ -254,7 +246,7 @@ static void startElementSAX(void *ctx, const xmlChar *localname, const xmlChar *
         [parser setStoringCharacters:YES];
     }
     
-    //Gets attributes
+    // Gets attributes
     NSMutableDictionary *attributeDictionary = [[[NSMutableDictionary alloc] init] autorelease];
     for (NSInteger attributeCounter = 0; attributeCounter < nb_attributes; attributeCounter++)
     {

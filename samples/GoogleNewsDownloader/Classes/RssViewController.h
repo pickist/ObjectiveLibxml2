@@ -2,7 +2,7 @@
 #import <ObjectiveLibxml2/ObjectiveLibxml2.h>
 #import "Item.h"
 
-@interface RssViewController : UITableViewController <ParserDelegate>
+@interface RssViewController : UITableViewController <XmlParserDelegate>
 {
     @private
         // Queues parsing thread

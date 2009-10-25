@@ -27,14 +27,14 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = 45E36670107817D000F718EE /* ObjectiveLibxml2.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = D2AAC07E0554694100DB518D /* libObjectiveLibxml2.a */;
+			remoteGlobalIDString = D2AAC07E0554694100DB518D;
 			remoteInfo = ObjectiveLibxml2;
 		};
 		45E3669710781A6F00F718EE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 45E36670107817D000F718EE /* ObjectiveLibxml2.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = D2AAC07D0554694100DB518D /* ObjectiveLibxml2 */;
+			remoteGlobalIDString = D2AAC07D0554694100DB518D;
 			remoteInfo = ObjectiveLibxml2;
 		};
 /* End PBXContainerItemProxy section */
